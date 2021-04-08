@@ -19,9 +19,10 @@ endif
 
 # Default - top level rule is what gets ran when you run just `make`
 build:
+> yarn asc assembly-script/assembly/index.ts --target debug
 > rm -rf dist
 > cp -a public dist
-> mkdir public/js
-> asc -b dist/js/as.wasm assembly-script/main.ts
+> mkdir dist/js
+> cp -a build/untouched/* dist/js/
 .PHONY: build
 

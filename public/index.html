@@ -1,7 +1,7 @@
 <!DOCTYPE >
 <script type="module">
   const { instance } = await WebAssembly.instantiateStreaming(
-    fetch("main.wasm")
+    fetch("js/untouched.wasm")
   );
-  console.log(instance.exports.getType());
+  console.log(instance.exports.add(54, 23));
 </script>
