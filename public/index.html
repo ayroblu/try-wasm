@@ -1,0 +1,7 @@
+<!DOCTYPE >
+<script type="module">
+  const { instance } = await WebAssembly.instantiateStreaming(
+    fetch("main.wasm")
+  );
+  console.log(instance.exports.getType());
+</script>
