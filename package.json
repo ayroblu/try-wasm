@@ -1,10 +1,18 @@
 {
+  "private": true,
   "scripts": {
-    "build": "make",
-    "start": "serve dist"
+    "build": "yarn asbuild",
+    "start": "serve dist",
+    "asbuild:untouched": "asc assembly-script/assembly/index.ts --target debug",
+    "asbuild:optimized": "asc assembly-script/assembly/index.ts --target release",
+    "asbuild": "yarn asbuild:untouched && yarn asbuild:optimized",
+    "as:test": "node assembly-script/tests"
   },
   "dependencies": {
-    "assemblyscript": "^0.18.23",
+    "@assemblyscript/loader": "^0.18.23",
     "serve": "^11.3.2"
+  },
+  "devDependencies": {
+    "assemblyscript": "^0.18.23"
   }
 }
