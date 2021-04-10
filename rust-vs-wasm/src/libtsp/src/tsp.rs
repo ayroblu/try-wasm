@@ -1,9 +1,6 @@
-// use std::num::Float;
-
-#[derive(Serialize, Deserialize)]
 pub struct Point {
-    x: u32,
-    y: u32,
+    pub x: u32,
+    pub y: u32,
 }
 
 pub fn tsp(points: Vec<Point>) -> usize {
