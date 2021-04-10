@@ -13,6 +13,11 @@ Check how that performs both natively and in wasm
 
 Doc to follow: https://developer.mozilla.org/en-US/docs/WebAssembly/Rust_to_wasm
 
+#### TSP Algorithm
+
+- Problem generator
+  - Randomly generate points on a 2D space, list of possible paths then becomes a complete graph with all the points, i.e. an NxM table
+
 ### Cross platform flexibility, with strings
 
 Implement fzf's algo.go in rust and/or AssemblyScript, then try use it both in the browser + in node.
