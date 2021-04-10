@@ -23,8 +23,9 @@ pub fn calculate_edges(points: &Vec<Point>) -> Vec<Vec<f64>> {
     points
         .iter()
         .map(|point| {
-            (0..points.len())
-                .map(|idx| distance_between_points(point, &points[idx]))
+            points
+                .iter()
+                .map(|p2| distance_between_points(point, p2))
                 .collect()
         })
         .collect()
