@@ -1,9 +1,9 @@
 import { points } from "./tsp-def";
-import { inspect } from "util";
+// import { inspect } from "util";
 
-function log(o: any) {
-  console.log(inspect(o, false, null, true /* enable colors */));
-}
+// function log(o: any) {
+//   console.log(inspect(o, false, null, true /* enable colors */));
+// }
 
 type Point = {
   x: number;
@@ -28,7 +28,7 @@ function tsp() {
 function runTsp(edges: number[][], path: ResultPath): ResultPath {
   let workingArr = [path];
   let minPath: ResultPath | null = null;
-  log(edges);
+  // log(edges);
   while (workingArr.length > 0) {
     const newWorkingArr: ResultPath[] = [];
     workingArr.forEach((path) => {
