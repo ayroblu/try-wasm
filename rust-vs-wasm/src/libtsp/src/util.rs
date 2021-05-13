@@ -32,11 +32,15 @@ pub fn calculate_edges(points: &Vec<Point>) -> Vec<Vec<f64>> {
 }
 
 fn distance_between_points(point1: &Point, point2: &Point) -> f64 {
-    ((get_squared_distance(point1.x, point2.x) + get_squared_distance(point1.y, point2.y)) as f64)
+    ((get_squared_distance_usize(point1.x, point2.x)
+        + get_squared_distance_usize(point1.y, point2.y)) as f64)
         .sqrt()
 }
 
-fn get_squared_distance(a: usize, b: usize) -> usize {
+fn get_squared_distance_usize(a: usize, b: usize) -> u64 {
+    get_squared_distance(a as u64, b as u64)
+}
+fn get_squared_distance(a: u64, b: u64) -> u64 {
     if a >= b {
         (a - b).pow(2)
     } else {

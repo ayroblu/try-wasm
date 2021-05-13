@@ -1,6 +1,7 @@
 mod util;
 
 pub use util::{calculate_edges, IdentifiablePoint, Point, ResultPath};
+// use web_sys::console;
 
 pub fn tsp<'a>(points: &'a Vec<Point>) -> ResultPath<'a> {
     let edges = calculate_edges(&points);
@@ -16,11 +17,20 @@ pub fn tsp<'a>(points: &'a Vec<Point>) -> ResultPath<'a> {
     run_tsp(points, edges, path)
 }
 
+// macro_rules! log {
+//     // Note that this is using the `log` function imported above during
+//     // `bare_bones`
+//     ($($t:tt)*) => (console::log_1(&format_args!($($t)*).to_string().into()))
+// }
+
 fn run_tsp<'a>(
     points: &'a Vec<Point>,
     edges: Vec<Vec<f64>>,
     path: ResultPath<'a>,
 ) -> ResultPath<'a> {
+    // log!("Hello using web-sys");
+    // log!("Edges {:?}", edges);
+
     let mut working_vec: Vec<ResultPath> = vec![path];
     let mut min_path_opt: Option<ResultPath> = None;
     while working_vec.len() > 0 {
@@ -35,6 +45,9 @@ fn run_tsp<'a>(
                         point: &points[i],
                     });
                     new_path.traveled_points.insert(i);
+                    // log!("Cost {}", new_path.cost);
+                    // log!("path {:?}", new_path.path);
+                    // log!("{:?}", new_path.traveled_points);
 
                     if new_path.traveled_points.len() == points.len() {
                         match min_path_opt {
