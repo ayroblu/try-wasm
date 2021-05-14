@@ -2,7 +2,7 @@ extern crate libwasmutil;
 
 mod util;
 
-use libwasmutil::{console_log, log};
+use libwasmutil::{debug_console_log, dlog};
 pub use util::{calculate_edges, IdentifiablePoint, Point, ResultPath};
 
 pub fn tsp<'a>(points: &'a Vec<Point>) -> ResultPath<'a> {
@@ -24,9 +24,7 @@ fn run_tsp<'a>(
     edges: Vec<Vec<f64>>,
     path: ResultPath<'a>,
 ) -> ResultPath<'a> {
-    // log!("{}", "Hello using web-sys");
-    // console_log("Hello using web-sys");
-    log!("Edges {:?}", edges);
+    dlog!("Edges {:?}", edges);
 
     let mut working_vec: Vec<ResultPath> = vec![path];
     let mut min_path_opt: Option<ResultPath> = None;
@@ -42,9 +40,9 @@ fn run_tsp<'a>(
                         point: &points[i],
                     });
                     new_path.traveled_points.insert(i);
-                    // log!("Cost {}", new_path.cost);
-                    // log!("path {:?}", new_path.path);
-                    // log!("{:?}", new_path.traveled_points);
+                    dlog!("Cost {}", new_path.cost);
+                    dlog!("path {:?}", new_path.path);
+                    dlog!("{:?}", new_path.traveled_points);
 
                     if new_path.traveled_points.len() == points.len() {
                         match min_path_opt {
