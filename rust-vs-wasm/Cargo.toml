@@ -18,10 +18,11 @@ serde_json = "1.0.32"
 serde_derive = "1.0.80"
 serde = "1.0.80"
 libtsp = { path = "./src/libtsp" }
-#web-sys = "0.3.51"
+libwasmutil = { path = "./src/libwasmutil" }
 
 [workspace]
 members = [
     "src/tsp",
     "src/libtsp",
+    "src/libwasmutil",
 ]

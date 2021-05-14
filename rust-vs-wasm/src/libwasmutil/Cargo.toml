@@ -1,5 +1,5 @@
 [package]
-name = "libtsp"
+name = "libwasmutil"
 version = "0.1.0"
 authors = ["Ben Lu <ayroblu@gmail.com>"]
 edition = "2018"
@@ -7,8 +7,8 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
-name = "libtsp"
-path = "src/tsp.rs"
+name = "libwasmutil"
+path = "src/util.rs"
 
-[dependencies]
-libwasmutil = { path = "../libwasmutil" }
+[target.'cfg(target_arch = "wasm32")'.dependencies]
+web-sys = { version = "0.3.51", features = ["console"] }

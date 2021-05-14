@@ -16,17 +16,18 @@ endif
 .RECIPEPREFIX = >
 
 ## ------------------------- Main part of the build file
+MODE ?=
 
 # Default - top level rule is what gets ran when you run just `make`
 build:
-> cargo build
-> cargo build -p tsp
+> cargo build $(MODE)
+> cargo build -p tsp $(MODE)
 > wasm-pack build --target nodejs
 > #npx tsc --noEmit
 .PHONY: build
 
 rust:
-> cargo run -p tsp
+> cargo run -p tsp $(MODE)
 .PHONY: rust
 
 wasm:
