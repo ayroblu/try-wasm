@@ -40,9 +40,6 @@ fn run_tsp<'a>(
                         point: &points[i],
                     });
                     new_path.traveled_points.insert(i);
-                    dlog!("Cost {}", new_path.cost);
-                    dlog!("path {:?}", new_path.path);
-                    dlog!("{:?}", new_path.traveled_points);
 
                     if new_path.traveled_points.len() == points.len() {
                         match min_path_opt {
