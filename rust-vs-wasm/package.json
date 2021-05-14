@@ -1,9 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "start": "ts-node ts",
-    "start:build": "yarn build && yarn start",
-    "build": "wasm-pack build --target nodejs"
+    "start": "ts-node ts"
   },
   "devDependencies": {
     "@types/node": "^14.14.37",

@@ -20,7 +20,8 @@ endif
 # Default - top level rule is what gets ran when you run just `make`
 build:
 > cargo build
-> yarn build
+> cargo build -p tsp
+> wasm-pack build --target nodejs
 > #npx tsc --noEmit
 .PHONY: build
 
