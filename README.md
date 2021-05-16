@@ -34,3 +34,7 @@ Implement fzf's algo.go in rust and/or AssemblyScript, then try use it both in t
 
 Implement a full fzf clone but in rust + WASI
 See reference: https://www.secondstate.io/articles/wasi-access-system-resources/
+
+### Multi language compatibility
+
+Write modules in multiple different languages and share their usage in the other languages
